@@ -6,7 +6,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(@Query() query: any): string {
-    return query;
+  getHello(@Query() query: {bot: string, user: string, data: string, date: string}) {
+    return this.appService.getHello(query)
   }
 }

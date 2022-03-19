@@ -12,7 +12,7 @@ async function bootstrap() {
 bootstrap();
 
 function getButton(ctx: any, text: string): InlineKeyboardButton {
-    return {text, url: `${process.env.URL}?bot=${ctx.botInfo.id}&user=${ctx.update.message.from.username}&data=${'LEGO'}&date=${ctx.update.message.date}`}
+    return {text, url: `${process.env.URL}?bot=${ctx.botInfo.id}&user=${ctx.update.message.from.username}&data=${text}&date=${ctx.update.message.date}`}
 }
 const bot = new Telegraf(process.env.BOT_TOKEN);
 bot.start(async (ctx) => {
